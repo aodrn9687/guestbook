@@ -6,7 +6,7 @@ type GuestbookCardProps = {
 };
 
 export default function GuestbookCard({ entry }: GuestbookCardProps) {
-  const timeLabel = new Date(entry.createdAt).toLocaleString("ko-KR", {
+  const timeLabel = new Date(entry.created_at).toLocaleString("ko-KR", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -20,7 +20,7 @@ export default function GuestbookCard({ entry }: GuestbookCardProps) {
         <h3 className="guestbook-card__name">{entry.name}</h3>
         <time
           className="guestbook-card__time"
-          dateTime={new Date(entry.createdAt).toISOString()}
+          dateTime={new Date(entry.created_at).toISOString()}
         >
           {timeLabel}
         </time>

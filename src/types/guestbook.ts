@@ -1,8 +1,8 @@
 export interface GuestbookEntry {
-  id: string;
+  id: number;
   name: string;
   message: string;
-  createdAt: number;
+  created_at: string;
 }
 
 export interface GuestbookInsertPayload {
