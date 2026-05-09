@@ -22,6 +22,18 @@
   color: var(--text-muted);
 }
 
+.app__login-hint {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: #fff;
+  border: 1px solid #e2e5ea;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
 .app__main {
   display: flex;
   flex-direction: column;

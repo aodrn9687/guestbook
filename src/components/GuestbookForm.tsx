@@ -1,13 +1,23 @@
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import type { GuestbookInsertPayload } from "../types/guestbook";
 import "./GuestbookForm.css";
 
 type GuestbookFormProps = {
   onSubmit: (payload: GuestbookInsertPayload) => Promise<void>;
+  suggestedName?: string;
 };
 
-export default function GuestbookForm({ onSubmit }: GuestbookFormProps) {
-  const [name, setName] = useState("");
+export default function GuestbookForm({
+  onSubmit,
+  suggestedName = "",
+}: GuestbookFormProps) {
+  const [name, setName] = useState(() =>
+    suggestedName.slice(0, 40)
+  );
+
+  useEffect(() => {
+    setName(suggestedName.slice(0, 40));
+  }, [suggestedName]);
   const [message, setMessage] = useState("");
   const [submitting, setSubmitting] = useState(false);
 

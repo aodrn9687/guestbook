@@ -1,13 +1,8 @@
-import { createClient } from "@supabase/supabase-js";
+import { supabase } from "../lib/supabase";
 import type {
   GuestbookEntry,
   GuestbookInsertPayload,
 } from "../types/guestbook";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL as string,
-  import.meta.env.VITE_SUPABASE_ANON_KEY as string
-);
 
 export async function listGuestbookEntries(): Promise<GuestbookEntry[]> {
   const { data, error } = await supabase
